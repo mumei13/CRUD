@@ -3,36 +3,44 @@ import axios from 'axios'
 import { apiUrl, LOCAL_STORAGE_TOKEN_NAME } from '../contexts/constants';
 import { Button } from 'antd'
 import setAuthToken from "../utils/setAuthToken";
-
+import { AuthContext } from '../contexts/AuthContext'
+import { useContext } from 'react'
 
 const initialState = {
     password: '',
     error: '',
-    success: ''
+    success: ''  //Sau để 3 state
 }
 
 function ChangePassword() {
+    const {
+        authState: {
+        user: { username }
+    },
+    logoutUser
+    } = useContext(AuthContext)
+
+    const logout = () => logoutUser()
+
     const [data, setData] = useState(initialState)
-    // const {token} = useParams()
     const {password} = data
 
     const handleChangeInput = event => {
-        // const {name, value} = event.target
         setData({...data,[event.target.name]: event.target.value})
     }
 
     const handleChangePass = async formPw => {
         const token = setAuthToken(localStorage.getItem(LOCAL_STORAGE_TOKEN_NAME))
-                // const changeData = await 
         try {
-            console.log(password)
-            console.log(token)
-            const res = await axios.post(`${apiUrl}/auth/change-password`, {Authorization: token}, {password: formPw})
-            return setData({...data, error: "", success: res.data.message})
+            const res = await axios.post(`${apiUrl}/auth/change-password`, {password: data.password},  { header: {Authorization: token}})
+            if(res.statusText==="OK") {
+                logout()
+            }
+            setData({...data, success: res.data.message})
 
         } catch (error) {
-            error.response.data.message && setData({...data, error: error.response.data.message, success: ''})
-        }
+            console.log(error)
+            }
     }
 
     return (

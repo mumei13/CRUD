@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "eslint-config-react-app": "^7.0.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0"
   }
 }

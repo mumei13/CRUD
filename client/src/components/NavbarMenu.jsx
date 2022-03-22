@@ -1,11 +1,14 @@
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import logoutIcon from '../assets/logout.svg'
-import Button from 'react-bootstrap/Button'
+// import Navbar from 'react-bootstrap/Navbar'
+// import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext'
 import { useContext } from 'react'
+
+import { Card, Col, Row, Button, Menu } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 import './NavBarMenu.scss'
+
+
 const NavbarMenu = () => {
     const {
         authState: {
@@ -15,34 +18,28 @@ const NavbarMenu = () => {
     } = useContext(AuthContext)
 
     const logout = () => logoutUser()
+    
 
     return (
-        <Navbar className='navbar navbar-direction-row'>
-            <Navbar.Brand className=''>
+        <Menu className='Menu Menu-direction-row' selectedKeys={["1"]} mode="horizontal">
+            <Menu.Item className='' key='web-name'>
                 Learn Mern
-            </Navbar.Brand>
-			
-            <Navbar.Collapse id='' className='navbar-direction-row'>
-                <Nav className=''>
-                    <Nav.Link className='' to='/dashboard' as={Link}>
-                        Dashboard
-                    </Nav.Link>
-                    <Nav.Link className='' to='/change-password' as={Link}>
-                        Change Password
-                    </Nav.Link>
-                </Nav>
-
-                <Nav>
-                    <Nav.Link className='' disabled>
-                        Welcome {username}
-                    </Nav.Link>
-                    <Button className='nav--btn-logout' onClick={logout}>
-                        <img src={logoutIcon} alt='logoutIcon' width='20px' height='20px' className=''/>
-                        Logout
-                    </Button>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+            </Menu.Item>
+            <Menu.Item className='' key='dashboard'>
+               <Link to='dashboard'>DashBoard</Link>
+            </Menu.Item>
+            <Menu.Item className='' key='change-password'>
+                <Link to='change-password'>Change Password</Link>
+            </Menu.Item>
+            <Menu.Item className='' key='web-welcome' title>
+                Welcome {username}
+            </Menu.Item>
+            <Menu.Item key='logout'> 
+                <Button type='primary' onClick={logout} icon={<LogoutOutlined />} size='large'>
+                    Logout
+                </Button>
+            </Menu.Item>
+        </Menu>
     )
 }
 

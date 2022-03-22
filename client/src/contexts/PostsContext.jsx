@@ -9,8 +9,8 @@ const PostContextProvider = ({children}) => {
 
 // State
 const [postState, dispatch] = useReducer(postReducer, {
-  post:[],
-  postloading: true
+  posts:[],
+  postsloading: true
 })
 
 // Get All Post

@@ -1,115 +1,119 @@
-button.nav--btn-logout {
-  color: white;
-  background-color: black;
-}
+// button.nav--btn-logout {
+//   color: rgb(0, 0, 0);
+//   background-color: black;
+// }
 
-.navbar {
-  background: #1fa4ad;
-  height: 70px;
-}
+// .navbar {
+//   background: #1fa4ad;
+//   height: 70px !important;
+// }
 
-.navbar-direction-row {
-  display: flex;
-  flex-direction: row;
-}
+// .navbar-direction-row {
+//   display: flex;
+//   flex-direction: row;
+// }
 
-a.nav-link {
-  color: #ffffff;
-  width: 300px !important;
-  height: 70px;
-  margin: 30px;
-}
+// .navbar-nav {
+//   margin-right: 0px;
+// }
 
-a.nav-link:hover {
-  color: rgb(114, 71, 71);
-}
+// a.nav-link {
+//   color: #ffffff !important;
+//   margin-right: 0px !important;
+//   height: 70px !important;
+//   margin: 30px;
+// }
 
-button.nav--btn-logout:hover {
-  cursor: pointer;
+// a.nav-link:hover {
+//   color: rgb(114, 71, 71) !important;
+// }
 
-  // color: #d93337;
+// button.nav--btn-logout:hover {
+//   cursor: pointer;
 
-  // font-size:6em;
+//   // color: #d93337;
 
-  // letter-spacing:10px; //Khoảng cách các chữ cái
+//   // font-size:6em;
 
-  animation: text-flicker 4s linear infinite; //animation này kếp hợp vs @keyframe
-}
+//   // letter-spacing:10px; //Khoảng cách các chữ cái
 
-.nav--btn-logout {
-  animation: letter-flicker 2s linear infinite; //animation này kếp hợp vs @keyframe
-}
+//   animation: text-flicker 4s linear infinite; //animation này kếp hợp vs @keyframe
+// }
 
-@keyframes text-flicker {
-  0% {
-    opacity: 0.1;
+// .nav--btn-logout {
+//   animation: letter-flicker 2s linear infinite; //animation này kếp hợp vs @keyframe
+// }
 
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
+// @keyframes text-flicker {
+//   0% {
+//     opacity: 0.1;
 
-  2% {
-    opacity: 1;
+//     text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
+//   2% {
+//     opacity: 1;
 
-  8% {
-    opacity: 0.1;
+//     text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
+//   8% {
+//     opacity: 0.1;
 
-  9% {
-    opacity: 1;
+//     text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
+//   9% {
+//     opacity: 1;
 
-  12% {
-    opacity: 0.1;
+//     text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   12% {
+//     opacity: 0.1;
 
-  20% {
-    opacity: 1;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   20% {
+//     opacity: 1;
 
-  25% {
-    opacity: 0.3;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   25% {
+//     opacity: 0.3;
 
-  30% {
-    opacity: 1;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   30% {
+//     opacity: 1;
 
-  70% {
-    opacity: 0.7;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   70% {
+//     opacity: 0.7;
 
-  72% {
-    opacity: 0.2;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   72% {
+//     opacity: 0.2;
 
-  77% {
-    opacity: 0.9;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
+//   77% {
+//     opacity: 0.9;
 
-  100% {
-    opacity: 0.9;
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
 
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
-}
+//   100% {
+//     opacity: 0.9;
+
+//     text-shadow: 0px 0px rgba(242, 22, 22, 1);
+//   }
+// }

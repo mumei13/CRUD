@@ -1,13 +1,8 @@
-// import { Children, Component, useContext, useState } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
 import { useContext } from 'react'
-// import { Route, Navigate, Outlet } from 'react-router-dom'
-// import Dashboard from '../page/Dashboard.page'
+import { Outlet } from 'react-router-dom'
 import LoginForm from '../pages/login.page'
 import NavbarMenu from '../components/NavbarMenu'
-import { Outlet } from 'react-router-dom'
-// import LoginForm from './login.page'
-
+import { AuthContext } from '../contexts/AuthContext'
 
 function ProtectedRoute () {
     const {
@@ -15,10 +10,9 @@ function ProtectedRoute () {
     } = useContext(AuthContext)
 
   return (
-    console.log(isAuthenticated),
     (isAuthenticated) ? (
         <>
-        <NavbarMenu />,
+        <NavbarMenu />
         <Outlet />
         </>
 

@@ -7,13 +7,13 @@ export const postReducer = (state, action) => {
       return {
         ...state,
         posts: payload,
-        postLoading: false
+        postsLoading: false
       }
     case POSTS_LOADED_FAIL:
       return {
         ...state,
         posts: [],
-        postLoading: false
+        postsLoading: false
       }
     default:
       return state

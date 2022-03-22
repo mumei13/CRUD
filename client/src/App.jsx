@@ -7,7 +7,10 @@ import AuthContextProvider from './contexts/AuthContext';
 import ProtectedRoute from './protected/protectedRoute';
 import { Navigate } from 'react-router-dom';
 
+
 import 'antd/dist/antd.min.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.scss';
 import ChangePassword from './pages/changePassword.page';

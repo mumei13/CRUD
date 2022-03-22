@@ -23,12 +23,12 @@ Content-Type: application/json
 
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc4NTI3NTJ9.VKuQrlfWPbNGPVBygAPJLKJk-kePoLkYrXECbwT9VVU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
 
 {
-    "title": "first nek",
-    "description": "abcxyZ custom content",
-    "url": "google.com",
+    "title": "tester",
+    "description": "Show demo",
+    "url": "instagram.org",
     "status": "LEARNING"
 }
 
@@ -36,33 +36,33 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3N
 ###
 
 GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc4NTI3NTJ9.VKuQrlfWPbNGPVBygAPJLKJk-kePoLkYrXECbwT9VVU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
 
 
 ###
 
-PUT http://localhost:5000/api/posts/622eb9315741b3ed4c4ff313
+PUT http://localhost:5000/api/posts/62394e6d667728f0b4cbb78c
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjJlYjkwZDU3NDFiM2VkNGM0ZmYzMTAiLCJpYXQiOjE2NDcyMjkyMDF9.98eIEwRb3lsC5q2LfGz-4iTKDXjHQAnT21OVjUoT3Dg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
 
 {
-    "title": "vue",
-    "description": "nani",
-    "url": "vue.org",
-    "status": "LEARNING"
+    "title": "123456",
+    "description": "ohgsdfjhklfgsdjhlkfdgsljkgsdf",
+    "url": "random.org",
+    "status": "LEARNED"
 }
 
 
 ###
 
-DELETE  http://localhost:5000/api/posts/622eb9315741b3ed4c4ff313
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjJlYjkwZDU3NDFiM2VkNGM0ZmYzMTAiLCJpYXQiOjE2NDcyMjkyMDF9.98eIEwRb3lsC5q2LfGz-4iTKDXjHQAnT21OVjUoT3Dg
+DELETE  http://localhost:5000/api/posts/62394e6d667728f0b4cbb78c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
 
 
 ###
 
 POST http://localhost:5000/api/auth/change-password
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc4MzU0NDR9.NkGkk8-x7cSCh21PQRYfsyD1LtnPERtLHU-4B6cYals
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
 Content-Type: application/json
 
 {
