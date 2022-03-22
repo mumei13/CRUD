@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from "react";
 import { postReducer } from "../reducer/postReducer";
-import { apiUrl } from "./constants";
+import { apiUrl, POSTS_LOADED_SUCCESS, POSTS_LOADED_FAIL } from "./constants";
 import axios from "axios";
 
 export const PostContext = createContext()
@@ -8,7 +8,7 @@ export const PostContext = createContext()
 const PostContextProvider = ({children}) => {
 
 // State
-const [postState, dispath] = useReducer(postReducer, {
+const [postState, dispatch] = useReducer(postReducer, {
   post:[],
   postloading: true
 })
@@ -16,20 +16,20 @@ const [postState, dispath] = useReducer(postReducer, {
 // Get All Post
 const getPosts = async () => {
   try {
-    const response = await axios.get(`${apiUrl}/post`)
+    const response = await axios.get(`${apiUrl}/posts`)
     if (response.data.success) {
-      dispath({type: 'POST_LOADED_SUCCESS', payload: response.data.posts})
+      dispatch({type: POSTS_LOADED_SUCCESS, payload: response.data.posts})
     }
   } catch (error) {
-    return error.response.data ? error.response.data : { success: false, message: 'Server Error' }
+    dispatch({type: POSTS_LOADED_FAIL})
   }
 }
 
 // Post context data
-const PostContextData = { postState, getPosts }
+const postContextData = { postState, getPosts }
 
   return (
-    <PostContext.Provider value={PostContextData}>
+    <PostContext.Provider value={postContextData}>
       {children}
     </PostContext.Provider>
   )
