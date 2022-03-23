@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-// import Landing from './page/Landing';
 import LoginForm from './pages/login.page';
 import RegisterForm from './pages/register.page';
 import Dashboard from './pages/Dashboard.page';
@@ -9,7 +8,6 @@ import { Navigate } from 'react-router-dom';
 
 
 import 'antd/dist/antd.min.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.scss';

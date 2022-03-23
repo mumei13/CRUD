@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "username": "duong1",
-    "password": "hihi"
+    "password": "duong"
 }
 
 
@@ -23,13 +23,13 @@ Content-Type: application/json
 
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDgwMDU1MjR9.-MpIqSL2cElTlu2iEwBSJsX3MqYV4qfzUQXk57nRbCU
 
 {
-    "title": "tester",
-    "description": "Show demo",
-    "url": "instagram.org",
-    "status": "LEARNING"
+    "title": "Seven",
+    "description": "Trời hôm nay nhiều mây cực",
+    "url": "https://www.youtube.com/watch?v=BHCU7CR_Unk&list=RDt-wFKNy0MZQ&index=7",
+    "status": "TO LEARN"
 }
 
 

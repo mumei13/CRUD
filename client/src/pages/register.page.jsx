@@ -4,6 +4,8 @@ import { Form, Input, Button } from 'antd';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import AlertMessage from '../components/AlertMessage';
+import './css/login_register.scss'
+import FormRange from 'react-bootstrap/esm/FormRange';
 
 const RegisterForm = () => {
   // Context
@@ -134,13 +136,14 @@ const RegisterForm = () => {
         <Form.Item>
           <Button variant='success' htmlType='submit'>Register</Button>
         </Form.Item>
-      
+        <Form.Item>
+          <p>Have account?
+            <Link to='../login'>
+              <button variant='info' className='btn'>Login</button>
+            </Link>
+          </p>
+        </Form.Item>
     </Form>
-    <p>Have account?
-      <Link to='../login'>
-        <Button variant='info' className='btn'>Login</Button>
-      </Link>
-    </p>
   </div>
   )
 }

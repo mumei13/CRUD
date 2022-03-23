@@ -1,0 +1,21 @@
+.form-middle {
+  h1 {
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  #basic {
+    max-width: 500px;
+    margin: auto;
+
+    .btn {
+      margin-left: 10px;
+      background: rgb(101, 198, 223) !important;
+      color: #ffffff !important;
+    }
+
+    .btn-login {
+      margin: auto;
+    }
+  }
+}

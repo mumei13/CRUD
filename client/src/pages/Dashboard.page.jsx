@@ -1,21 +1,21 @@
 import React from 'react'
-import {PostContext} from '../contexts/PostsContext'
+import './css/Dashboard.scss'
+import { PostContext } from '../contexts/PostsContext'
 import { useContext, useEffect } from 'react'
-import {AuthContext} from '../contexts/AuthContext'
-import SinglePost from '../components/posts/PostModal'
+import { AuthContext } from '../contexts/AuthContext'
+import SinglePost from '../components/posts/Post.modal'
+import AddPostModal from '../components/posts/AddPost.modal'
 
-import { Card, Col, Row, Button } from 'antd';
-import Spinner from 'react-bootstrap/Spinner'
-import Toast from 'react-bootstrap/Toast'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
+import { Card, Col, Row, Tooltip } from 'antd';
+import { Button, Spinner, Toast, OverlayTrigger } from 'react-bootstrap'
+
 
 
 const Dashboard = () => {
   // Contexts
   const {
-		authState: {user: { username }}} = useContext(AuthContext)
-  const{ postState: {posts, postsLoading}, getPosts } = useContext(PostContext)
+    authState: { user: { username } } } = useContext(AuthContext)
+  const { postState: { posts, postsLoading }, getPosts, setShowAddPostModal } = useContext(PostContext)
 
 
   // Start get all posts
@@ -38,7 +38,7 @@ const Dashboard = () => {
             <p>
               Click the button below to track first skill to learn
             </p>
-            <Button variant='primary'>Learn mern</Button>
+            <Button variant='primary' onClick={setShowAddPostModal.bind(this, true)}>Start Study</Button>
           </Card>
         </Card>
       </>
@@ -46,21 +46,26 @@ const Dashboard = () => {
   } else {
     body = (
       <>
-        <Row gutter={16} className=''>
-          {posts.map(post =>(
+        <Row gutter={[16, 24]} className=''>
+          {posts.map(post => (
             <Col span={8} key={post._id} className=''>
               <SinglePost post={post} />
             </Col>
           ))}
         </Row>
+        {/* Opend Add Post Modal */}
+        <Button className='btn-floating' onClick={setShowAddPostModal.bind(this, true)}>
+          + Add
+        </Button>
       </>
     )
   }
 
   return (
     <>
-    <h1>DASHBOARD</h1>
-    {body}
+      <h1>DASHBOARD</h1>
+      {body}
+      <AddPostModal />
     </>
   )
 }
