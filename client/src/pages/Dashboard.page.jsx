@@ -1,13 +1,14 @@
 import React from 'react'
+import { useContext, useEffect } from 'react'
 import './css/Dashboard.scss'
 import { PostContext } from '../contexts/PostsContext'
-import { useContext, useEffect } from 'react'
 import { AuthContext } from '../contexts/AuthContext'
 import SinglePost from '../components/posts/Post.modal'
 import AddPostModal from '../components/posts/AddPost.modal'
+import UpdatePostModal from '../components/posts/UpdatePost.modal'
 
-import { Card, Col, Row, Tooltip } from 'antd';
-import { Button, Spinner, Toast, OverlayTrigger } from 'react-bootstrap'
+import { Card, Col, Row } from 'antd';
+import { Button, Spinner } from 'react-bootstrap'
 
 
 
@@ -15,7 +16,7 @@ const Dashboard = () => {
   // Contexts
   const {
     authState: { user: { username } } } = useContext(AuthContext)
-  const { postState: { posts, postsLoading }, getPosts, setShowAddPostModal } = useContext(PostContext)
+  const { postState: { post, posts, postsLoading }, getPosts, setShowAddPostModal } = useContext(PostContext)
 
 
   // Start get all posts
@@ -48,7 +49,7 @@ const Dashboard = () => {
       <>
         <Row gutter={[16, 24]} className=''>
           {posts.map(post => (
-            <Col span={8} key={post._id} className=''>
+            <Col lg={8} sm={24} md={12} xs={24} key={post._id} className=''>
               <SinglePost post={post} />
             </Col>
           ))}
@@ -66,6 +67,7 @@ const Dashboard = () => {
       <h1>DASHBOARD</h1>
       {body}
       <AddPostModal />
+      {post !== null && <UpdatePostModal />}
     </>
   )
 }

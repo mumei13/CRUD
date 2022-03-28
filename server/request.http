@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "username": "duong1",
-    "password": "duong"
+    "password": "hihi"
 }
 
 
@@ -23,33 +23,32 @@ Content-Type: application/json
 
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDgwMDU1MjR9.-MpIqSL2cElTlu2iEwBSJsX3MqYV4qfzUQXk57nRbCU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDg0NDAyMDZ9.4m-oc4N7qILnom2cmQhUUXNXyoRwUM5h2n1d4DIY6D8
 
 {
     "title": "Seven",
     "description": "Trời hôm nay nhiều mây cực",
     "url": "https://www.youtube.com/watch?v=BHCU7CR_Unk&list=RDt-wFKNy0MZQ&index=7",
-    "status": "TO LEARN"
+    "status": "LEARNING"
 }
 
 
 ###
 
 GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDg0NDMyODF9.yG6JXcSp789Dk_WPSRiA4OvM-92hHNEv3xnVuUc_A20
 
 ###
 
-PUT http://localhost:5000/api/posts/62394e6d667728f0b4cbb78c
+PUT http://localhost:5000/api/posts/623adbe4e2ccf2175d09924f
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDc5MjI2OTd9.RPkjjUVtCR4ZwIHfXhXLwcJoiVduqgY0r98Bj5HNwIY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjM3NmNmMjA3ZDkxYjY3NWEzZDBmZjEiLCJpYXQiOjE2NDg0NDMyODF9.yG6JXcSp789Dk_WPSRiA4OvM-92hHNEv3xnVuUc_A20
 
 {
-    "title": "123456",
-    "description": "ohgsdfjhklfgsdjhlkfdgsljkgsdf",
+    "title": "Update",
+    "description": "Trời hôm nay nhiều mây cực",
     "url": "random.org",
-    "status": "LEARNED"
+    "status": "LEARNING"
 }
 
 

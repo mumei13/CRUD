@@ -81,15 +81,13 @@ router.put("/:id", verifyToken, async (req, res) => {
       updatedPost,
       { new: true }
     );
-
+    // console.log(updatedPost);
     //user not auth
     if (!updatedPost)
-      return res
-        .status(401)
-        .json({
-          success: false,
-          message: "Post not found or user not authenticate",
-        });
+      return res.status(401).json({
+        success: false,
+        message: "Post not found or user not authenticate",
+      });
 
     res.json({
       success: true,
@@ -112,12 +110,10 @@ router.delete("/:id", verifyToken, async (req, res) => {
 
     const deletePost = await Post.findOneAndDelete(postDeleteCondition);
     if (!deletePost)
-      return res
-        .status(401)
-        .json({
-          success: false,
-          message: "Post not found or user not authenticate",
-        });
+      return res.status(401).json({
+        success: false,
+        message: "Post not found or user not authenticate",
+      });
 
     res.json({
       success: true,

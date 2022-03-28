@@ -2,16 +2,21 @@ import React from 'react'
 import { Button, Tooltip } from 'antd'
 import { CaretRightOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
-import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react'
 import { PostContext } from '../../contexts/PostsContext';
 
 
 const ActionButton = ({ url, _id }) => {
-  // const { deletePost } = useContext(PostContext)
-  const { deletePost } = useContext(
+  const { deletePost, findPost, setShowUpdatePostModal, showAddPostModal, setShowAddPostModal, addPost } = useContext(
     PostContext
   )
+
+  const choosePost = postId => {
+    findPost(postId)
+    setShowUpdatePostModal(true)
+  }
+
+
   // const navigate = useNavigate()
   // const openLink = navigate(`${url}`, {replace: true})
   return (
@@ -27,12 +32,12 @@ const ActionButton = ({ url, _id }) => {
         type='primary'
       />
       <Button
+        onClick={choosePost.bind(this, _id)}
         style={{ margin: '2px' }}
         shape='circle'
         icon={<EditOutlined />}
         size='large'
       />
-
       <Button
         onClick={deletePost.bind(this, _id)}
         style={{ margin: '2px' }}
