@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000/api' : 'https://musical-phoenix-952108.netlify.app/api'
+export const apiUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000/api' : 'someURL'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learn-mern'
 
