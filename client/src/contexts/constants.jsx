@@ -1,5 +1,5 @@
 export const apiUrl = process.env.NODE_ENV !== 'production'
-  ? 'http://localhost:5000/api'
+  ? 'https://fathomless-brook-04032.herokuapp.com/api'
   : 'https://musical-phoenix-952108.netlify.app/api'
 // : 'https://frozen-anchorage-71281.herokuapp.com/api'
 
