@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'https://dry-brushlands-33141.herokuapp.com/api' : 'https://dry-brushlands-33141.herokuapp.com'
+export const apiUrl = process.env.NODE_ENV !== 'production' ? 'https://localhost:3000/api' : 'https://localhost:3000/api'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learn-mern'
 
