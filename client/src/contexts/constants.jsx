@@ -1,5 +1,5 @@
 export const apiUrl = process.env.NODE_ENV !== 'production'
-  ? 'https://todo-crud-test.herokuapp.com//api'
+  ? 'https://todo-crud-test.herokuapp.com/api'
   // ? 'http://localhost:5000/api'
   : 'https://musical-phoenix-952108.netlify.app/api'
 // : 'https://frozen-anchorage-71281.herokuapp.com/api'
