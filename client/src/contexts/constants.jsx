@@ -1,7 +1,7 @@
 export const apiUrl = process.env.NODE_ENV !== 'production'
-  ? 'https://dry-thicket-42484.herokuapp.com/'
+  ? 'https://dry-thicket-42484.herokuapp.com'
   // ? 'http://localhost:5000/api'
-  : 'https://dry-thicket-42484.herokuapp.com/'
+  : 'https://dry-thicket-42484.herokuapp.com'
 // : 'https://frozen-anchorage-71281.herokuapp.com/api'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learn-mern'
