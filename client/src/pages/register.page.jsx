@@ -31,12 +31,12 @@ const RegisterForm = () => {
   // Function to get data and check with database
   // Get data and save to variable registerForm
 
-  const onChangeRegisterForm = event =>
-    setRegisterForm({ ...registerForm, [event.target.name]: event.target.value })
+  const onChangeRegisterForm = e =>
+    setRegisterForm({ ...registerForm, [e.target.name]: e.target.value })
 
   // Check with database
 
-  const onFinish = async event => {
+  const onFinish = async e => {
     if (password !== confirmPassword) {
       setAlert({ type: 'danger', message: 'Passwords do not match' })
       setTimeout(() => setAlert(null), 5000)

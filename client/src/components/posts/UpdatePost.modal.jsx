@@ -32,19 +32,15 @@ const UpdatePostModal = () => {
   // Close and Cancel
   const closeModal = () => {
     setUpdatedPost(post)
-    resetUpdateNewPost()
+    setShowUpdatePostModal(false)
   }
 
   // Send oke
   const onFinish = async e => {
     e.preventDefault()
     await updatePost(updatedPost)
-    resetUpdateNewPost()
-    openNotification()
-  }
-
-  const resetUpdateNewPost = () => {
     setShowUpdatePostModal(false)
+    openNotification()
   }
 
   // Noti success
@@ -137,7 +133,9 @@ const UpdatePostModal = () => {
       <Form onSubmit={onFinish}>
         <Modal.Body>
           <Form.Group>
+            <label>Title</label>
             <Form.Control
+              label='Title'
               type='text'
               placeholder='Title'
               name='title'
@@ -146,11 +144,9 @@ const UpdatePostModal = () => {
               value={title}
               onChange={onChangeUpdatePostForm}
             />
-            <Form.Text id='title-help' muted>
-              Required
-            </Form.Text>
           </Form.Group>
           <Form.Group>
+            <label>Description</label>
             <Form.Control
               as='textarea'
               rows={3}
@@ -161,6 +157,7 @@ const UpdatePostModal = () => {
             />
           </Form.Group>
           <Form.Group>
+            <label>Link to learn</label>
             <Form.Control
               type='text'
               placeholder='Youtube Tutorial URL'
@@ -170,6 +167,7 @@ const UpdatePostModal = () => {
             />
           </Form.Group>
           <Form.Group>
+            <label>Status</label>
             <Form.Control
               as="select"
               value={status}

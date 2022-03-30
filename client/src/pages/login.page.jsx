@@ -28,10 +28,10 @@ const LoginForm = () => {
 
   // Function to get data and check with database
   // Get data and save to variable loginForm
-  const onChangeLoginForm = event =>
-    setLoginForm({ ...loginForm, [event.target.name]: event.target.value })
+  const onChangeLoginForm = e =>
+    setLoginForm({ ...loginForm, [e.target.name]: e.target.value })
   // Check with database
-  const onFinish = async event => {
+  const onFinish = async e => {
     const loginData = await loginUser(loginForm);
 
     try {
@@ -46,6 +46,7 @@ const LoginForm = () => {
     }
 
   };
+
   // Noti when fail
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);

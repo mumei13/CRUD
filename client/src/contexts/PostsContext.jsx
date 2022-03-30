@@ -26,6 +26,7 @@ const PostContextProvider = ({ children }) => {
   const [showUpdatePostModal, setShowUpdatePostModal] = useState(false)
 
 
+
   // Get All Post
   const getPosts = async () => {
     try {
@@ -37,6 +38,8 @@ const PostContextProvider = ({ children }) => {
       dispatch({ type: POSTS_LOADED_FAIL })
     }
   }
+
+
 
   // Add Post
   const addPost = async newPost => {
@@ -50,6 +53,8 @@ const PostContextProvider = ({ children }) => {
       return error.response.data ? error.response.data : { success: false, message: 'Server Error' }
     }
   }
+
+
 
   // Find Post
   const findPost = postId => {
@@ -89,6 +94,8 @@ const PostContextProvider = ({ children }) => {
       console.log(error)
     }
   }
+
+
 
   // Post context data
   const postContextData = {

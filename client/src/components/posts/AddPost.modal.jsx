@@ -1,6 +1,6 @@
 import React from 'react'
 // import { Modal, Button, Form } from 'react-bootstrap'
-import { Modal, Form, Input } from 'antd'
+import { Modal, Form, Input, Button } from 'antd'
 import { useContext, useState } from 'react'
 import { PostContext } from '../../contexts/PostsContext'
 import { notification } from 'antd';
@@ -58,7 +58,20 @@ const AddPostModal = () => {
 
   return (
     <>
-      <Modal title="What's up mann?" visible={showAddPostModal} onCancel={closeModal} onOk={onFinish}>
+      <Modal title="What's up mann?" visible={showAddPostModal} onCancel={closeModal} onOk={onFinish}
+        footer={[
+          <Button key="cancel" onClick={closeModal}>
+            Cancel
+          </Button>,
+          <Button
+            key="submit"
+            type="primary"
+            onClick={onFinish}
+          >
+            Submit
+          </Button>,
+        ]}
+      >
         <Form name="basic"
           labelCol={{
             span: 6,
@@ -69,14 +82,14 @@ const AddPostModal = () => {
           initialValues={{
             title: '',
             description: '',
-            url: ''
+            url: '',
           }}
         >
           <Form.Item
             label='Title'
-            type='text'
             onChange={onChangeNewPostForm}
             value={title}
+            name="title"
             rules={[
               {
                 required: true,
@@ -84,13 +97,13 @@ const AddPostModal = () => {
               },
             ]}
           >
-            <Input name='title' />
+            <Input name="title" />
           </Form.Item>
 
           <Form.Item
             label='Description'
-            title='Description'
             value={description}
+            name='description'
             onChange={onChangeNewPostForm}
           >
             <TextArea rows={4} name='description' />
@@ -98,9 +111,8 @@ const AddPostModal = () => {
 
           <Form.Item
             label='Link to learn'
-            type='text'
-            placeholder='Youtube Tutorial URL'
             value={url}
+            name='url'
             onChange={onChangeNewPostForm}
           >
             <Input name='url' />

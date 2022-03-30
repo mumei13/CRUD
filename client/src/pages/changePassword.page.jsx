@@ -87,7 +87,7 @@ function ChangePassword() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password!',
+                            message: 'Please fill your password!',
                         },
                     ]}>
                     <Input.Password name="password" />
@@ -101,7 +101,7 @@ function ChangePassword() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password again!',
+                            message: 'Please fill your password again!',
                         },
                     ]}>
                     <Input.Password name="confirmPassword" />

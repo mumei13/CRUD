@@ -22,7 +22,7 @@ const Dashboard = () => {
   useEffect(() => getPosts(), [])
 
   let body = null
-  let bodyme = []
+  let bodyHavePost = []
   let statusPost = ['TO LEARN', 'LEARNING', 'LEARNED']
 
   if (postsLoading) {
@@ -38,7 +38,7 @@ const Dashboard = () => {
           <div as='h1'>Hi {username}</div>
           <Card title="Card title" bordered={true}>
             <p>
-              Click the button below to track first skill to learn
+              Click the button below to track first lesson you want to learn!
             </p>
             <Button variant='primary' onClick={setShowAddPostModal.bind(this, true)}>Start Study</Button>
           </Card>
@@ -46,8 +46,9 @@ const Dashboard = () => {
       </div>
     )
   } else {
+    // Filter post by status
     for (let i = 0; i < statusPost.length; i++) {
-      bodyme[i] = (
+      bodyHavePost[i] = (
         <div key={statusPost[i]}>
           <h2 className='has-margin-left'>{statusPost[i]}</h2>
           <Row gutter={[16, 24]} className=''>
@@ -67,8 +68,7 @@ const Dashboard = () => {
     }
     body = (
       <>
-        {/* Opend Add Post Modal */}
-        {bodyme}
+        {bodyHavePost}
         <Button className='btn-floating' onClick={setShowAddPostModal.bind(this, true)}>
           + Add
         </Button>

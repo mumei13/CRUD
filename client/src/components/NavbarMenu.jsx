@@ -36,7 +36,6 @@ const NavbarMenu = () => {
                 <Menu.Item key='logout' className='menu-right' onClick={logout} danger icon={<LogoutOutlined />}>
                     Logout
                 </Menu.Item>
-
             </Menu>
         </div >
     )

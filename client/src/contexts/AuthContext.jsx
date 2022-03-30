@@ -14,6 +14,8 @@ const AuthContextProvider = ({ children }) => {
         user: null
     })
 
+
+
     // Authenticate user
     const loadUser = async () => {
         if (localStorage[LOCAL_STORAGE_TOKEN_NAME]) {
@@ -63,6 +65,7 @@ const AuthContextProvider = ({ children }) => {
     }
 
 
+
     // Register
     const registerUser = async userForm => {
         try {
@@ -81,6 +84,7 @@ const AuthContextProvider = ({ children }) => {
     }
 
 
+
     // Logout
     const logoutUser = () => {
         localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME)
@@ -89,6 +93,8 @@ const AuthContextProvider = ({ children }) => {
             payload: { isAuthenticated: false, user: null }
         })
     }
+
+
 
     // Context data
     const authContextData = { loginUser, registerUser, logoutUser, authState }

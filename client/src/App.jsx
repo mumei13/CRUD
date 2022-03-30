@@ -22,8 +22,8 @@ function App() {
           <Routes>
             <Route path="register" element={<RegisterForm />} />
             <Route path="login" element={<LoginForm />} />
+            <Route path="/" element={<Navigate to='/login' />} />
             <Route element={<ProtectedRoute />} >
-              <Route path="/" element={<Navigate to='/login' />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="change-password" element={<ChangePassword />} />
             </Route>
