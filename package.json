@@ -3,6 +3,7 @@
     "eslint-config-react-app": "^7.0.0"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0"
+    "@ant-design/icons": "^4.7.0",
+    "serve": "^13.0.2"
   }
 }
