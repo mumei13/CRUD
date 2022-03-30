@@ -1,6 +1,6 @@
 export const apiUrl = process.env.NODE_ENV !== 'production'
-  ? 'https://dry-thicket-42484.herokuapp.com/api'
-  // ? 'http://localhost:5000/api'
+  // ? 'https://dry-thicket-42484.herokuapp.com/api'
+  ? 'http://localhost:5000/api'
   : 'https://dry-thicket-42484.herokuapp.com/api'
 // : 'https://frozen-anchorage-71281.herokuapp.com/api'
 
