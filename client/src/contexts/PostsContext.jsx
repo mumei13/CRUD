@@ -55,7 +55,7 @@ const PostContextProvider = ({ children }) => {
   const findPost = postId => {
     const post = postState.posts.find(post => post._id === postId)
     dispatch({
-      type: 'FIND_POST',
+      type: FIND_POST,
       payload: post
     })
   }

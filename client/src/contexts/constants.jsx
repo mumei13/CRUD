@@ -1,7 +1,7 @@
 export const apiUrl = process.env.NODE_ENV !== 'production'
-  ? 'https://todo-crud-test.herokuapp.com/api'
+  ? 'https://to-learn-crud.herokuapp.com/api'
   // ? 'http://localhost:5000/api'
-  : 'https://musical-phoenix-952108.netlify.app/api'
+  : 'https://to-learn-crud.herokuapp.com/api'
 // : 'https://frozen-anchorage-71281.herokuapp.com/api'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learn-mern'

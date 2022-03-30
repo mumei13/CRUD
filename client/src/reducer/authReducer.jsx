@@ -13,7 +13,6 @@ export const authReducer = (state, action) => {
                 isAuthenticated,
                 user
             }
-
         default:
             return state
     }

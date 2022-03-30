@@ -1,6 +1,6 @@
 import React from 'react'
 // import { Modal, Button, Form } from 'react-bootstrap'
-import { Modal, Button, Form, Input } from 'antd'
+import { Modal, Form, Input } from 'antd'
 import { useContext, useState } from 'react'
 import { PostContext } from '../../contexts/PostsContext'
 import { notification } from 'antd';
@@ -9,7 +9,6 @@ const AddPostModal = () => {
   //Context
   const { showAddPostModal, setShowAddPostModal, addPost } = useContext(PostContext)
 
-
   // State
   const [newPost, setNeWPost] = useState({
     title: '',
@@ -17,7 +16,6 @@ const AddPostModal = () => {
     url: '',
     status: 'TO LEARN'
   })
-
 
   const { TextArea } = Input;
 
@@ -29,14 +27,14 @@ const AddPostModal = () => {
     resetAddNewPost()
   }
 
-  // Send to server
+  // Add
   const onFinish = async e => {
-    resetAddNewPost()
     if (newPost.title === '') {
       closeModal()
     } else {
       e.preventDefault()
-      const { success, message } = await addPost(newPost)
+      await addPost(newPost)
+      resetAddNewPost()
       return openNotification()
     }
   }
@@ -46,9 +44,7 @@ const AddPostModal = () => {
     setShowAddPostModal(false)
   }
 
-
   // Noti success
-
   const openNotification = () => {
     notification.open({
       message: 'Successfully',
@@ -63,7 +59,7 @@ const AddPostModal = () => {
   return (
     <>
       <Modal title="What's up mann?" visible={showAddPostModal} onCancel={closeModal} onOk={onFinish}>
-        <Form name="basic" onFinish={onFinish}
+        <Form name="basic"
           labelCol={{
             span: 6,
           }}
@@ -71,46 +67,46 @@ const AddPostModal = () => {
             span: 18,
           }}
           initialValues={{
-            remember: true,
-          }}>
+            title: '',
+            description: '',
+            url: ''
+          }}
+        >
           <Form.Item
             label='Title'
             type='text'
-            placeholder='Title'
-            name='title'
             onChange={onChangeNewPostForm}
+            value={title}
             rules={[
               {
                 required: true,
                 message: 'Please enter title!',
               },
-            ]} >
-            <Input value={newPost.title} name='title' />
+            ]}
+          >
+            <Input name='title' />
           </Form.Item>
+
           <Form.Item
             label='Description'
             title='Description'
-            as='textarea'
-            placeholder='Description'
-            name='description'
-            value={newPost.description}
+            value={description}
             onChange={onChangeNewPostForm}
           >
             <TextArea rows={4} name='description' />
           </Form.Item>
+
           <Form.Item
             label='Link to learn'
             type='text'
             placeholder='Youtube Tutorial URL'
-            name='url'
-            value={newPost.url}
+            value={url}
             onChange={onChangeNewPostForm}
           >
-            <Input />
+            <Input name='url' />
           </Form.Item>
         </Form>
       </Modal>
-
     </>
     // <>
     //   <Modal show={showAddPostModal} onHide={closeModal}>

@@ -1,15 +1,14 @@
-// import Navbar from 'react-bootstrap/Navbar'
-// import Nav from 'react-bootstrap/Nav'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 
-import { Card, Col, Row, Button, Menu } from 'antd';
+import { Menu } from 'antd';
 import { LogoutOutlined } from '@ant-design/icons';
 import './NavBarMenu.scss'
 
 
 const NavbarMenu = () => {
+    let navigate = useNavigate();
     const {
         authState: {
             user: { username }
@@ -17,29 +16,29 @@ const NavbarMenu = () => {
         logoutUser
     } = useContext(AuthContext)
 
-    const logout = () => logoutUser()
-    
+    const logout = () => {
+        logoutUser()
+        navigate('/login')
+    }
 
     return (
-        <Menu className='Menu Menu-direction-row' selectedKeys={["1"]} mode="horizontal">
-            <Menu.Item className='' key='web-name'>
-                Learn Mern
-            </Menu.Item>
-            <Menu.Item className='' key='dashboard'>
-               <Link to='dashboard'>DashBoard</Link>
-            </Menu.Item>
-            <Menu.Item className='' key='change-password'>
-                <Link to='change-password'>Change Password</Link>
-            </Menu.Item>
-            <Menu.Item className='' key='web-welcome' title>
-                Welcome {username}
-            </Menu.Item>
-            <Menu.Item key='logout'> 
-                <Button type='primary' onClick={logout} icon={<LogoutOutlined />} size='large'>
+        <div id='navbar'>
+            <Menu className='Menu Menu-direction-row' selectedKeys={["1"]} mode="horizontal">
+                <Menu.Item className='' key='dashboard'>
+                    <Link to='dashboard'>To Learn</Link>
+                </Menu.Item>
+                <Menu.Item className='' key='change-password'>
+                    <Link to='change-password'>Change Password</Link>
+                </Menu.Item>
+                <Menu.Item className='hide-on-mobile welcome-user' key='web-welcome' title>
+                    Welcome {username}
+                </Menu.Item>
+                <Menu.Item key='logout' className='menu-right' onClick={logout} danger icon={<LogoutOutlined />}>
                     Logout
-                </Button>
-            </Menu.Item>
-        </Menu>
+                </Menu.Item>
+
+            </Menu>
+        </div >
     )
 }
 

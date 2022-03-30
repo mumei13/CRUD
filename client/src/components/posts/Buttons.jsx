@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button, Tooltip } from 'antd'
+import { Button } from 'antd'
 import { CaretRightOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 import { useContext } from 'react'
 import { PostContext } from '../../contexts/PostsContext';
 
 
-const ActionButton = ({ url, _id }) => {
-  const { deletePost, findPost, setShowUpdatePostModal, showAddPostModal, setShowAddPostModal, addPost } = useContext(
+const Buttons = ({ url, _id }) => {
+  const { deletePost, findPost, setShowUpdatePostModal, } = useContext(
     PostContext
   )
 
@@ -16,9 +16,6 @@ const ActionButton = ({ url, _id }) => {
     setShowUpdatePostModal(true)
   }
 
-
-  // const navigate = useNavigate()
-  // const openLink = navigate(`${url}`, {replace: true})
   return (
     <>
       <Button
@@ -49,4 +46,4 @@ const ActionButton = ({ url, _id }) => {
   )
 }
 
-export default ActionButton
+export default Buttons

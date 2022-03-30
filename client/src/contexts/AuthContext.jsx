@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export const AuthContext = createContext()
 
-const AuthContextProvider = ({children}) => {
+const AuthContextProvider = ({ children }) => {
     const [authState, dispatch] = useReducer(authReducer, {
         authLoading: true,
         isAuthenticated: false,
@@ -49,9 +49,9 @@ const AuthContextProvider = ({children}) => {
     const loginUser = async userForm => {
         try {
             const response = await axios.post(`${apiUrl}/auth/login`, userForm)
-            if (response.data.success) 
+            if (response.data.success)
 
-            localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
+                localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
 
             await loadUser()
 
@@ -61,15 +61,15 @@ const AuthContextProvider = ({children}) => {
             else return { success: false, message: error.message }
         }
     }
-    
+
 
     // Register
     const registerUser = async userForm => {
         try {
             const response = await axios.post(`${apiUrl}/auth/register`, userForm)
-            if (response.data.success) 
+            if (response.data.success)
 
-            localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
+                localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
 
             await loadUser()
 
@@ -80,24 +80,6 @@ const AuthContextProvider = ({children}) => {
         }
     }
 
-
-    //Change password
-    // const changePassword = async userForm => {
-    //     try {
-    //         const response = await axios.post(`${apiUrl}/auth/change-password`, userForm)
-    //         if (response.data.success) 
-
-    //         localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
-
-    //         await loadUser()
-
-    //         return response.data
-    //     } catch (error) {
-    //         if (error.response.data) return error.response.data
-    //         else return { success: false, message: error.message }
-    //     }
-    // }
-    
 
     // Logout
     const logoutUser = () => {
@@ -109,7 +91,7 @@ const AuthContextProvider = ({children}) => {
     }
 
     // Context data
-    const authContextData = { loginUser, registerUser, logoutUser, authState  }
+    const authContextData = { loginUser, registerUser, logoutUser, authState }
 
     //Return data
     return (
@@ -117,6 +99,6 @@ const AuthContextProvider = ({children}) => {
             {children}
         </AuthContext.Provider>
     )
- }
+}
 
- export default AuthContextProvider
+export default AuthContextProvider

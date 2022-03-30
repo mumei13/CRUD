@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import { Modal, Button, Form } from 'react-bootstrap'
 // import { Modal, Button, Form, Input, Select } from 'antd'
 import { useContext, useState, useEffect } from 'react'
@@ -7,7 +7,7 @@ import { PostContext } from '../../contexts/PostsContext'
 import { notification } from 'antd';
 // const { Option } = Select;
 
-const statusPost = ['TO LEARN', 'LEARNING', 'LEARNED']
+// const statusPost = ['TO LEARN', 'LEARNING', 'LEARNED']
 
 const UpdatePostModal = () => {
   // const [form] = Form.useForm();
@@ -19,7 +19,6 @@ const UpdatePostModal = () => {
     setShowUpdatePostModal,
     updatePost
   } = useContext(PostContext)
-
 
   // State
   const [updatedPost, setUpdatedPost] = useState(post)
@@ -39,18 +38,16 @@ const UpdatePostModal = () => {
   // Send oke
   const onFinish = async e => {
     e.preventDefault()
-    const { success, message } = await updatePost(updatedPost)
+    await updatePost(updatedPost)
     resetUpdateNewPost()
     openNotification()
   }
 
   const resetUpdateNewPost = () => {
     setShowUpdatePostModal(false)
-
   }
 
   // Noti success
-
   const openNotification = () => {
     notification.open({
       message: 'Successfully',
@@ -133,10 +130,9 @@ const UpdatePostModal = () => {
     //   </Modal>
     // </>
 
-
     <Modal show={showUpdatePostModal} onHide={closeModal}>
       <Modal.Header closeButton>
-        <Modal.Title>What's up bro?'</Modal.Title>
+        <Modal.Title>What's up mannnn?</Modal.Title>
       </Modal.Header>
       <Form onSubmit={onFinish}>
         <Modal.Body>
@@ -191,7 +187,7 @@ const UpdatePostModal = () => {
             Cancel
           </Button>
           <Button variant='primary' type='submit'>
-            LearnIt!
+            Update!
           </Button>
         </Modal.Footer>
       </Form>
