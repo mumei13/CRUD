@@ -21,7 +21,9 @@ const AddPostModal = () => {
 
   const { title, description, url } = newPost
 
-  const onChangeNewPostForm = e => setNeWPost({ ...newPost, [e.target.name]: e.target.value })
+  const onChangeNewPostForm = e => {
+    setNeWPost({ ...newPost, [e.target.name]: e.target.value })
+  }
 
   const closeModal = () => {
     resetAddNewPost()
@@ -40,7 +42,12 @@ const AddPostModal = () => {
   }
 
   const resetAddNewPost = () => {
-    setNeWPost({ title: '', description: '', url: '' })
+    setNeWPost({
+      title: '',
+      description: '',
+      url: ''
+    })
+    console.log(title)
     setShowAddPostModal(false)
   }
 
