@@ -1,85 +1,61 @@
-import React from 'react'
-// import { Modal, Button, Form } from 'react-bootstrap'
+import React, { useCallback } from 'react'
+// import { useEffect } from 'react'
 import { Modal, Form, Input, Button } from 'antd'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { PostContext } from '../../contexts/PostsContext'
 import { notification } from 'antd';
+import './style.scss'
 
 const AddPostModal = () => {
+  const [form] = Form.useForm()
   //Context
   const { showAddPostModal, setShowAddPostModal, addPost } = useContext(PostContext)
 
-  // State
-  const [newPost, setNeWPost] = useState({
-    title: '',
-    description: '',
-    url: '',
-    status: 'TO LEARN'
-  })
-
   const { TextArea } = Input;
 
-  const { title, description, url } = newPost
+  // useEffect(() => {
+  //   if (showAddPostModal && form) {
+  //     // form.resetFields()
+  //   }
+  // }, [showAddPostModal, form])
 
-  const onChangeNewPostForm = e => {
-    setNeWPost({ ...newPost, [e.target.name]: e.target.value })
-  }
-
-  const closeModal = () => {
-    resetAddNewPost()
-  }
-
-  // Add
-  const onFinish = async e => {
-    if (newPost.title === '') {
-      closeModal()
-    } else {
-      e.preventDefault()
-      await addPost(newPost)
-      resetAddNewPost()
-      return openNotification()
-    }
-  }
-
-  const resetAddNewPost = () => {
-    setNeWPost({
-      title: '',
-      description: '',
-      url: ''
-    })
-    console.log(title)
+  const closeModal = useCallback(() => {
+    form.resetFields()
     setShowAddPostModal(false)
-  }
+  }, [form, setShowAddPostModal])
+
+
 
   // Noti success
-  const openNotification = () => {
+  const openNotification = useCallback(() => {
     notification.open({
       message: 'Successfully',
       description:
         'Enjoy learning',
-      onClick: () => {
-        console.log('Notification Clicked!');
-      },
     });
-  };
+  }, [])
+
+
+
+  // Validate Form
+  const onFinish = useCallback(async values => {
+    if (values.title === '') {
+      closeModal()
+    } else {
+      await addPost(values)
+      closeModal()
+      return openNotification()
+    }
+  }, [closeModal, addPost, openNotification])
+
+
 
   return (
     <>
-      <Modal title="What's up mann?" visible={showAddPostModal} onCancel={closeModal} onOk={onFinish}
-        footer={[
-          <Button key="cancel" onClick={closeModal}>
-            Cancel
-          </Button>,
-          <Button
-            key="submit"
-            type="primary"
-            onClick={onFinish}
-          >
-            Submit
-          </Button>,
-        ]}
+      <Modal title="What's up mann?" visible={showAddPostModal} onCancel={closeModal}
+        footer={null}
       >
-        <Form name="basic"
+        <Form form={form} name="basic"
           labelCol={{
             span: 6,
           }}
@@ -91,11 +67,10 @@ const AddPostModal = () => {
             description: '',
             url: '',
           }}
+          onFinish={onFinish}
         >
           <Form.Item
             label='Title'
-            onChange={onChangeNewPostForm}
-            value={title}
             name="title"
             rules={[
               {
@@ -104,82 +79,33 @@ const AddPostModal = () => {
               },
             ]}
           >
-            <Input name="title" />
+            <Input />
           </Form.Item>
 
           <Form.Item
             label='Description'
-            value={description}
             name='description'
-            onChange={onChangeNewPostForm}
           >
-            <TextArea rows={4} name='description' />
+            <TextArea rows={4} />
           </Form.Item>
 
           <Form.Item
             label='Link to learn'
-            value={url}
             name='url'
-            onChange={onChangeNewPostForm}
           >
-            <Input name='url' />
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+            <Button onClick={closeModal} className='form-modal-button submit'>
+              Cancel
+            </Button>
           </Form.Item>
         </Form>
       </Modal>
     </>
-    // <>
-    //   <Modal show={showAddPostModal} onHide={closeModal}>
-    //     <Modal.Header closeButton>
-    //       <Modal.Title>What do you want to learn?</Modal.Title>
-    //     </Modal.Header>
-    //     <Form onSubmit={onFinish}>
-    //       <Modal.Body>
-    //         <Form.Group>
-    //           <Form.Control
-    //             type='text'
-    //             placeholder='Title'
-    //             name='title'
-    //             required
-    //             aria-describedby='title-help'
-    //             value={title}
-    //             onChange={onChangeNewPostForm}
-    //           />
-    //           <Form.Text id='title-help' muted>
-    //             Required
-    //           </Form.Text>
-    //         </Form.Group>
-    //         <Form.Group>
-    //           <Form.Control
-    //             as='textarea'
-    //             rows={3}
-    //             placeholder='Description'
-    //             name='description'
-    //             value={description}
-    //             onChange={onChangeNewPostForm}
-    //           />
-    //         </Form.Group>
-    //         <Form.Group>
-    //           <Form.Control
-    //             type='text'
-    //             placeholder='Youtube Tutorial URL'
-    //             name='url'
-    //             value={url}
-    //             onChange={onChangeNewPostForm}
-    //           />
-    //         </Form.Group>
-    //       </Modal.Body>
-    //       <Modal.Footer>
-    //         <Button variant='secondary' onClick={closeModal}>
-    //           Cancel
-    //         </Button>
-    //         <Button variant='primary' type='submit'>
-    //           LearnIt!
-    //         </Button>
-    //       </Modal.Footer>
-    //     </Form>
-    //   </Modal>
-    // </>
-
   )
 }
 

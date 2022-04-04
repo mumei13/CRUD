@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import LoginForm from './pages/login.page';
-import RegisterForm from './pages/register.page';
-import Dashboard from './pages/Dashboard.page';
+import LoginForm from './pages/Login/login.page';
+import RegisterForm from './pages/Register/register.page';
+import Dashboard from './pages/Dashboard/Dashboard.page';
 import AuthContextProvider from './contexts/AuthContext';
 import ProtectedRoute from './protected/protectedRoute';
 import { Navigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import 'antd/dist/antd.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.scss';
-import ChangePassword from './pages/changePassword.page';
+import ChangePassword from './pages/ChangePassword/changePassword.page';
 import PostContextProvider from './contexts/PostsContext';
 
 function App() {

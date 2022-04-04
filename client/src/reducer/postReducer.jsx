@@ -44,6 +44,7 @@ export const postReducer = (state, action) => {
         ...state,
         posts: state.posts.filter(post => post._id !== payload)
       }
+
     default:
       return state
   }

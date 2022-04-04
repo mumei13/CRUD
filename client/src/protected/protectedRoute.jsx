@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
-import LoginForm from '../pages/login.page'
+import { Outlet } from 'react-router-dom'
+import LoginForm from '../pages/Login/login.page'
 import NavbarMenu from '../components/NavbarMenu'
 import { AuthContext } from '../contexts/AuthContext'
 
@@ -9,6 +9,8 @@ function ProtectedRoute() {
         authState: { isAuthenticated }
     } = useContext(AuthContext)
 
+
+    console.log("isauthen:", isAuthenticated)
     return (
         (isAuthenticated) ? (
             <>
@@ -16,6 +18,7 @@ function ProtectedRoute() {
                 <Outlet />
             </>
         ) : <LoginForm path='/login' />
+
     )
 }
 

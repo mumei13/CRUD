@@ -2,9 +2,9 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Form, Input, Button } from 'antd'
 import { useState, useContext } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
-import AlertMessage from '../components/AlertMessage'
-import './css/login_register.scss'
+import { AuthContext } from '../../contexts/AuthContext'
+import AlertMessage from '../../components/AlertMessage'
+import './login_register.scss'
 
 
 const LoginForm = () => {

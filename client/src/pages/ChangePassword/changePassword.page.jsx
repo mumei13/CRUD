@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { Form, Input, Button } from 'antd';
 
-import { apiUrl, LOCAL_STORAGE_TOKEN_NAME } from '../contexts/constants';
-import setAuthToken from "../utils/setAuthToken";
-import { AuthContext } from '../contexts/AuthContext'
-import AlertMessage from '../components/AlertMessage';
-import './css/login_register.scss'
+import { apiUrl, LOCAL_STORAGE_TOKEN_NAME } from '../../contexts/constants';
+import setAuthToken from "../../utils/setAuthToken";
+import { AuthContext } from '../../contexts/AuthContext'
+import AlertMessage from '../../components/AlertMessage';
+import '../Login/login_register.scss'
 
 const initialState = {
     password: '',

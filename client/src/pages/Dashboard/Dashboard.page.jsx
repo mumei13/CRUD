@@ -1,11 +1,11 @@
 import React from 'react'
 import { useContext, useEffect } from 'react'
-import './css/Dashboard.scss'
-import { PostContext } from '../contexts/PostsContext'
-import { AuthContext } from '../contexts/AuthContext'
-import SinglePost from '../components/posts/Post.modal'
-import AddPostModal from '../components/posts/AddPost.modal'
-import UpdatePostModal from '../components/posts/UpdatePost.modal'
+import './Dashboard.scss'
+import { PostContext } from '../../contexts/PostsContext'
+import { AuthContext } from '../../contexts/AuthContext'
+import SinglePost from '../../components/posts/Post.modal'
+import AddPostModal from '../../components/posts/AddPost.modal'
+import UpdatePostModal from '../../components/posts/UpdatePost.modal'
 
 import { Card, Col, Row, Divider, Spin } from 'antd';
 import { Button } from 'react-bootstrap'
@@ -19,7 +19,7 @@ const Dashboard = () => {
   const { postState: { post, posts, postsLoading }, getPosts, setShowAddPostModal } = useContext(PostContext)
 
   // Start get all posts
-  useEffect(() => getPosts(), [])
+  useEffect(() => getPosts(), [getPosts])
 
   let body = null
   let bodyHavePost = []
