@@ -24,8 +24,6 @@ const AddPostModal = () => {
     setShowAddPostModal(false)
   }, [form, setShowAddPostModal])
 
-
-
   // Noti success
   const openNotification = useCallback(() => {
     notification.open({
@@ -34,8 +32,6 @@ const AddPostModal = () => {
         'Enjoy learning',
     });
   }, [])
-
-
 
   // Validate Form
   const onFinish = useCallback(async values => {
@@ -47,8 +43,6 @@ const AddPostModal = () => {
       return openNotification()
     }
   }, [closeModal, addPost, openNotification])
-
-
 
   return (
     <>
@@ -95,7 +89,7 @@ const AddPostModal = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item>
+          <Form.Item className='button float-right'>
             <Button type="primary" htmlType="submit">
               Submit
             </Button>

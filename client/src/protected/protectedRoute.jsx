@@ -9,8 +9,6 @@ function ProtectedRoute() {
         authState: { isAuthenticated }
     } = useContext(AuthContext)
 
-
-    console.log("isauthen:", isAuthenticated)
     return (
         (isAuthenticated) ? (
             <>

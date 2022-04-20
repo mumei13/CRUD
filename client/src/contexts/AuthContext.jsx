@@ -15,7 +15,6 @@ const AuthContextProvider = ({ children }) => {
     })
 
 
-
     // Authenticate user
     const loadUser = async () => {
         if (localStorage[LOCAL_STORAGE_TOKEN_NAME]) {
